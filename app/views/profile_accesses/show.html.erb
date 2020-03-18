@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Object access:</strong>
+  <%= @profile_access.object_access %>
+</p>
+
+<p>
+  <strong>Access kind:</strong>
+  <%= @profile_access.access_kind %>
+</p>
+
+<p>
+  <strong>User profile:</strong>
+  <%= @profile_access.user_profile %>
+</p>
+
+<%= link_to 'Edit', edit_profile_access_path(@profile_access) %> |
+<%= link_to 'Back', profile_accesses_path %>

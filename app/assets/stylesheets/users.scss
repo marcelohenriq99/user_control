@@ -1,0 +1,35 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.newuser-content-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.newuser-content-container h1 {
+  margin: 0 10px;
+}
+
+.form-newuser-container {
+  width: 60%;
+  height: 400px;
+  padding: 10px 30px;
+  background-color: whitesmoke !important;
+}
+
+.actions-buttons {
+  margin-top: 60px;
+}
+
+.form-newuser-check-box {
+  margin-left: 7px;
+}
+
+.btn-table:hover {
+  color: #333;
+  background-color: white;
+}

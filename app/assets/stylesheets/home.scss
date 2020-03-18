@@ -1,0 +1,63 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home-main-container {
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.home-content-container {
+    margin-left: 10%;
+}
+
+.home-content-container h1 {
+    margin-top: 0;
+}
+
+.home-top-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-top-container-text {
+    width: 90%;
+}
+
+.home-btn-menu {
+    margin-top: 7px;
+    color: white !important;
+}
+
+.home-btn-menu:hover {
+    background-color: #4db6ac;
+}
+
+.btn-logout {
+    color: white !important;
+}
+
+.btn-logout:hover {
+    background-color: #80cbc4;
+}
+
+//Indicators styles
+
+.indicators-container {
+    //width: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    //background-color: burlywood;
+    box-shadow: 2px, 20px, 8px #333 !important;
+    border-radius: 3px;
+    padding: 10px 20px;
+}
+
+.home-indicators {
+    margin: 1% !important;
+    padding: 10px;
+    width: 50% !important;
+    max-width: 500px;
+    max-height: 300px !important;
+}

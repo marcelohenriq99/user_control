@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Profile Accesses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Object access</th>
+      <th>Access kind</th>
+      <th>User profile</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profile_accesses.each do |profile_access| %>
+      <tr>
+        <td><%= profile_access.object_access %></td>
+        <td><%= profile_access.access_kind %></td>
+        <td><%= profile_access.user_profile %></td>
+        <td><%= link_to 'Show', profile_access %></td>
+        <td><%= link_to 'Edit', edit_profile_access_path(profile_access) %></td>
+        <td><%= link_to 'Destroy', profile_access, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Profile Access', new_profile_access_path %>

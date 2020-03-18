@@ -1,0 +1,88 @@
+<ul id="slide-out" class="sidenav">
+    <li><div class="user-view">
+    <div class="background">
+        <img src="https://t.tudocdn.net/101161?w=646&h=284">
+    </div>
+    <a href="#"><img class="circle" src="https://icons-for-free.com/iconfiles/png/512/boy+character+man+school+boy+user+icon-1320085976501561317.png"></a>
+    <a href="#"><span class="white-text name"><%= @username %></span></a>
+    <a href="#"><span class="white-text email"><%= @email %></span></a>
+    <%= link_to "Log out", destroy_user_session_path, method: "delete", class: "waves-effect waves-teal btn-flat btn-logout" %>
+    </div></li>
+
+    <li>
+        <%= link_to home_path, class: "waves-effect" do %>
+            <i class="material-icons left">dashboard</i> Dashboard
+        <% end %>
+    </li>
+
+    <% if can? :read, User %>
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header waves-effect drop-li"><i class="material-icons left">group</i>Users</a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li>
+                                <% if can? :read, User %>
+                                    <%= link_to users_path, class: "waves-effect" do %>
+                                        <i class="material-icons left">person_add</i> New user
+                                    <% end %>
+                                <% end %>
+                            </li>
+                            <li>
+                                <% if can? :read, User %>
+                                    <%= link_to user_profiles_path, class: "waves-effect" do %>
+                                        <i class="material-icons left">account_box</i> New profile
+                                    <% end %>
+                                <% end %>
+                            </li>
+                            <%# <li><a href="#!">Link 3</a></li>
+                            <li><a href="#!">Link 4</a></li> %>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    <% end %>
+
+    <li>
+        <%= link_to stores_path, class: "waves-effect" do %>
+            <i class="material-icons left">store</i> Stores
+        <% end %>
+    </li>
+    <li>
+        <%= link_to products_path, class: "waves-effect" do %>
+            <i class="material-icons left">shopping_cart</i> Products
+        <% end %>
+    </li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Vendas</a></li>
+    <li>
+        <%= link_to clients_path, class: "waves-effect" do %>
+            <i class="material-icons left">people_alt</i> clients
+        <% end %>
+    </li>
+    <li>
+        <%= link_to deliveries_path, class: "waves-effect" do %>
+            <i class="material-icons left">local_shipping</i> deliveries
+        <% end %>
+    </li>
+
+    <%# <li>
+        <!-- Dropdown Trigger -->
+        <a class='dropdown-trigger waves-effect' href='#' data-target='dropdown1'><i class="material-icons left">person</i>Drop Me!<i class="material-icons right">arrow_drop_down</i></a>
+
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="#!">one</a></li>
+            <li><a href="#!">two</a></li>
+            <li class="divider" tabindex="-1"></li>
+            <li><a href="#!">three</a></li>
+            <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+            <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+        </ul>
+                    
+    </li> %>
+    
+</ul>
+        

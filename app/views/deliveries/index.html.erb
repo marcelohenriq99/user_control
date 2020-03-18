@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Deliveries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Priority</th>
+      <th>Status</th>
+      <th>User</th>
+      <th>Client</th>
+      <th>Product</th>
+      <th>Total</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @deliveries.each do |delivery| %>
+      <tr>
+        <td><%= delivery.description %></td>
+        <td><%= delivery.priority %></td>
+        <td><%= delivery.status %></td>
+        <td><%= delivery.user.name %></td>
+        <td><%= delivery.client.name %></td>
+        <td><%= delivery.product.description %></td>
+        <td><%= delivery.total %></td>
+
+        <td>
+          <% if( can? :read, Delivery ) %>
+            <%= link_to 'Show', delivery %>
+          <% end %>  
+        </td>
+        <td>
+          <% if( can? :update, Delivery ) %>
+            <%= link_to 'Edit', edit_delivery_path(delivery) %>
+          <% end %>
+        </td>
+        <td>
+          <% if( can? :destroy, Delivery ) %>
+            <%= link_to 'Destroy', delivery, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Delivery', new_delivery_path %>

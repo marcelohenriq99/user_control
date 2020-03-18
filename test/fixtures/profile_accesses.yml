@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  object_access: MyString
+  access_kind: one
+  user_profile: one
+
+two:
+  object_access: MyString
+  access_kind: two
+  user_profile: two

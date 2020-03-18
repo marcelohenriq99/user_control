@@ -1,0 +1,2 @@
+module ProfileAccessesHelper
+end

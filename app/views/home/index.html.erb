@@ -1,0 +1,43 @@
+<div class="home-main-container">
+
+    <%= render :partial => "partials/sidebar" %>
+    <%= render :partial => "partials/header" %>
+
+    <div class="home-content-container">
+        <div class="home-top-container">
+            <div class="home-top-container-text">
+            
+                <h1>Home#index</h1>
+                <p>Find me in app/views/home/index.html.erb</p>
+
+            </div>
+
+            <div class="indicators-container">
+                <div class="card home-indicators" style=" height: 300px ">
+                    <p>Registered products</p>
+                    <%# line_chart User.group(:created_at).count %>
+                    <%# line_chart User.group(:created_at).count, width: "280px", height: "150px" %>
+                    <%= line_chart Product.group_by_day_of_week(:created_at, format: "%a", reverse: true).count, width: "100%", height: "230px" %>
+                </div>
+
+                <div class="card home-indicators" style=" height: 300px ">
+                    <p>Registered Stores</p>
+                    <%# line_chart User.group(:created_at).count %>
+                    <%# line_chart User.group(:created_at).count, width: "280px", height: "150px" %>
+                    <%= line_chart Store.group_by_day_of_week(:created_at, format: "%a", reverse: true).count, width: "100%", height: "230px" %>
+                </div>
+            </div>
+
+            <div class="indicators-container">
+                <div class="card home-indicators" style=" height: 300px ">
+                    <p>Registered Users</p>
+                    <%# line_chart User.group(:created_at).count %>
+                    <%# line_chart User.group(:created_at).count, width: "280px", height: "150px" %>
+                    <%= area_chart User.group_by_day_of_week(:created_at, format: "%a", reverse: true).count, width: "100%", height: "230px" %>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,44 @@
+// Place all the styles related to the user_profiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.edit-access-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.access-form-container {
+    width: 80%;
+}
+
+.fields-for-access-container {
+    display: flex;
+    flex-direction: row;
+    height: 80px !important;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.description-profile-field-container {
+    width: 80%;
+    padding-top: 30px;
+    margin-left: 10%;
+}
+
+.object-access-field-container {
+    padding-top: 2px;
+    width: 40%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.access-kind-select {
+    width: 30%;
+}
+
+.access-actions {
+    padding-left: 9.7%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

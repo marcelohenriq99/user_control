@@ -1,0 +1,2 @@
+class AccessKind < ApplicationRecord
+end

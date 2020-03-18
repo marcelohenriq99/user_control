@@ -1,0 +1,43 @@
+<div class="login-main-container">
+  <div class="form-login-container" style=" width: 100% ">
+
+    <div class="form-login-logo">
+      <%= image_tag("brain-tech-logo-no-bg.png", size: "40x40", alt: "Edit Entry") %>
+      <h3>Log in</h3>
+    </div>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">lock</i>
+          <%= f.label :password %>
+          <%= f.password_field :password, autocomplete: "current-password" %>
+        </div>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field form-login-check-box">
+          <%= f.label :remember_me  do %>
+            <%= f.check_box :remember_me, class: "filled-in" %>
+            <span>remember me?</span>
+          <% end %>
+        </div>
+      <% end %>
+
+      <div class="actions form-login-button-login">
+        <%= f.submit "Log in", class: "waves-effect waves-light btn" %>
+      </div>
+    <% end %>
+    <div class="form-login-shared-links">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

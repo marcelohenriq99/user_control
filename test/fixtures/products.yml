@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  description: MyString
+  store: one
+  price: 1.5
+  status: 1
+
+two:
+  code: MyString
+  description: MyString
+  store: two
+  price: 1.5
+  status: 1

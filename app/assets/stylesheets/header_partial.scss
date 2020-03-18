@@ -1,0 +1,18 @@
+.header-partial {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    box-shadow: 2px 1px 8px #e0e0e0;
+}
+
+.header-partial-logo {
+    display: flex;
+    flex-direction: row;
+}
+
+.header-partial p {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+}

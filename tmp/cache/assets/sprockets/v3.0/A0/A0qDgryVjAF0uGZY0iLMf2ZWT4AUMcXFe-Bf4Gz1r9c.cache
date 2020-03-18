@@ -1,0 +1,7 @@
+I"g(function() {
+  $(document).ready(function() {
+    $('.sidenav').sidenav();
+  });
+
+}).call(this);
+:ET

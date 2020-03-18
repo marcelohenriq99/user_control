@@ -1,0 +1,32 @@
+<%= form_with(model: profile_access, local: true) do |form| %>
+  <% if profile_access.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(profile_access.errors.count, "error") %> prohibited this profile_access from being saved:</h2>
+
+      <ul>
+      <% profile_access.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :object_access %>
+    <%= form.text_field :object_access %>
+  </div>
+
+  <div class="field">
+    <%= form.label :access_kind_id %>
+    <%= form.text_field :access_kind_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_profile_id %>
+    <%= form.text_field :user_profile_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

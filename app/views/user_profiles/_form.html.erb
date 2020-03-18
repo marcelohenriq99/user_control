@@ -1,0 +1,76 @@
+<%= form_with(model: user_profile, local: true, class: "card access-form-container") do |form| %>
+  <% if user_profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user_profile.errors.count, "error") %> prohibited this user_profile from being saved:</h2>
+
+      <ul>
+      <% user_profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-field col s12 description-profile-field-container">
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_field :description %>
+    </div>
+  </div>
+
+  <% if "#{controller_name}/#{action_name}" == "user_profiles/edit" %>
+    
+      
+    <%= form.fields_for :profile_accesses do |accesses_fields| %>
+
+      <div class="fields-for-access-container">
+
+        <div class="input-field col s12 object-access-field-container">
+          <div class="field">
+            <%= accesses_fields.text_field :object_access %>
+          </div>
+        </div>
+
+        <div class="access-kind-select">
+          <div class="field">
+            <%= accesses_fields.label :access_kind_id %>
+            <%= accesses_fields.collection_select( :access_kind_id, AccessKind.all, :id, :description ) %>
+          </div>
+        </div>
+        
+      </div>
+      <div class="divider"></div>
+    <% end %>
+
+    
+
+  <% else %>
+    <% list_models.each do |model| %>
+      <%= form.fields_for :profile_accesses do |accesses_fields| %>
+
+        <div class="fields-for-access-container">
+
+          <div class="input-field col s12 object-access-field-container">
+            <div class="field">
+              <%= accesses_fields.text_field :object_access, value: model %>
+            </div>
+          </div>
+
+          <div class="access-kind-select">
+            <div class="field">
+              <%= accesses_fields.label :access_kind_id %>
+              <%= accesses_fields.collection_select( :access_kind_id, AccessKind.all, :id, :description ) %>
+            </div>
+          </div>
+          
+        </div>
+        <div class="divider"></div>
+      <% end %><%# fim do fields_for %>
+    <% end %><%# fim do for each %>
+  <% end %><%# fim do if else %>
+
+  <div class="actions access-actions">
+    <%= form.submit "save", class: "waves-effect waves-light btn btn-access-send" %>
+    <%= link_to 'Back', user_profiles_path, class: "waves-effect waves-light btn btn-access-back" %>
+  </div>
+<% end %>
